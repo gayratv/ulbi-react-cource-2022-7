@@ -158,7 +158,7 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
+      "avatar": "https://slovnet.ru/wp-content/uploads/2019/01/11-4.jpg"
     },
     {
       "id": "2",
@@ -178,7 +178,7 @@
       "country": "Belarus",
       "city": "Moscow",
       "username": "admin213",
-      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
+      "avatar": "https://slovnet.ru/wp-content/uploads/2019/01/11-4.jpg"
     },
     {
       "id": "2",
@@ -190,6 +190,17 @@
       "city": "Moscow",
       "username": "ulbi tv",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "3",
+      "first": "Gayrat",
+      "lastname": "Vlasov",
+      "age": 45,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "Gayrat",
+      "avatar": "https://techcrunch.com/wp-content/uploads/2022/12/lensa-ai-magic-avatar.jpg"
     }
   ]
 }
