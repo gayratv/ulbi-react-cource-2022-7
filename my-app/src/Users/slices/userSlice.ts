@@ -1,161 +1,91 @@
-import {createEntityAdapter, createSlice, PayloadAction, SliceCaseReducers} from '@reduxjs/toolkit';
-import {User} from "../types/RandomUser";
-
-const articlesAdapter = createEntityAdapter<User>({
-  selectId: (user) => user.id.name + user.id.value,
-});
-
-
-const articlePageSlice = createSlice<User[],SliceCaseReducers<User[]>>({
-  name: 'userSlice',
-  initialState: articlesAdapter.getInitialState(),
-  reducers: {
-    setPage: (state, action: PayloadAction<number>) => {
-      state.page = action.payload;
-    },
-/*
-    initState: (state) => {
-      const view = localStorage.getItem(ARTICLES_VIEW_LOCAL_STORAGE_KEY) as ArticleView;
-      state.view = view;
-      state.limit = view === ArticleView.LIST ? 4 : 9;
-      state._inited = true;
-    },
-*/
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchArticles.pending, (state, action) => {
-        state.error = undefined;
-        state.isLoading = true;
-
-        if (action.meta.arg.replace) {
-          articlesAdapter.removeAll(state);
-        }
-      })
-      .addCase(fetchArticles.fulfilled, (state, action) => {
-        state.isLoading = false;
-        if (state.limit) {
-          state.hasMore = state.limit <= action.payload.length;
-        }
-
-        if (action.meta.arg.replace) {
-          articlesAdapter.setAll(state, action.payload);
-        } else {
-          articlesAdapter.addMany(state, action.payload);
-        }
-      })
-      .addCase(
-        fetchArticles.rejected,
-        (state, action: PayloadAction<string | undefined>) => {
-          state.isLoading = false;
-          state.error = action.payload;
-        },
-      );
-  },
-
-});
-
-export const {reducer: articlePageReducer} = articlePageSlice;
-export const {actions: articlePageActions} = articlePageSlice;
-
-/*
-import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider';
 import {
-  Article, ArticleSortField, ArticleSortFieldType, ArticleType, ArticleView,
-} from 'entities/Article/model/types/Article';
-import { ARTICLES_VIEW_LOCAL_STORAGE_KEY } from 'shared/const/localStorage';
-import { SortOrder } from 'shared/types/Order';
-import { ArticlePageSchema } from '../../types/ArticlePageSchema';
-import { fetchArticles } from '../../services/fetchArticles/fetchArticles';
+  createEntityAdapter,
+  createSlice,
+  configureStore,
+  EntityState
+} from '@reduxjs/toolkit';
 
-const articlesAdapter = createEntityAdapter<Article>({
-  selectId: (article) => article.id,
+
+type Book = { bookId: string; title: string }
+// Since we don't provide `selectId`, it defaults to assuming `entity.id` is the right field
+const booksAdapter = createEntityAdapter<Book>({
+  selectId: (book) => book.bookId,
+  // Keep the "all IDs" array sorted based on book titles
+  sortComparer: (a, b) => a.title.localeCompare(b.title),
+
+  // BooksortComparer: (a, b) => a.title.localeCompare(b.title),
 });
 
-export const getArticles = articlesAdapter.getSelectors<StateSchema>(
-  (state) => state.articlePage
-    || articlesAdapter.getInitialState(),
-);
-
-const articlePageSlice = createSlice({
-  name: 'articlePageSlice',
-  initialState: articlesAdapter.getInitialState<ArticlePageSchema>({
-    isLoading: false,
-    error: undefined,
-    view: ArticleView.TILE,
-    ids: [],
-    entities: {},
-    page: 1,
-    hasMore: true,
-    order: 'asc',
-    sort: ArticleSortField.CREATED,
-    search: '',
-    type: ArticleType.ALL,
-    _inited: false,
+const booksSlice = createSlice({
+  name: 'books',
+  initialState: booksAdapter.getInitialState({
+    loading: 'idle',
   }),
   reducers: {
-    setView: (state, action: PayloadAction<ArticleView>) => {
-      state.view = action.payload;
-      localStorage.setItem(ARTICLES_VIEW_LOCAL_STORAGE_KEY, action.payload);
+    // Can pass adapter functions directly as case reducers.  Because we're passing this
+    // as a value, `createSlice` will auto-generate the `bookAdded` action type / creator
+    bookAdded: booksAdapter.addOne,
+    booksLoading(state, action) {
+      if (state.loading === 'idle') {
+        state.loading = 'pending';
+      }
     },
-    setPage: (state, action: PayloadAction<number>) => {
-      state.page = action.payload;
+    booksReceived(state, action) {
+      if (state.loading === 'pending') {
+        // Or, call them as "mutating" helpers in a case reducer
+        booksAdapter.setAll(state, action.payload);
+        state.loading = 'idle';
+      }
     },
-    setOrder: (state, action: PayloadAction<SortOrder>) => {
-      state.order = action.payload;
-    },
-    setSearch: (state, action: PayloadAction<string>) => {
-      state.search = action.payload;
-    },
-    setSort: (state, action: PayloadAction<ArticleSortFieldType>) => {
-      state.sort = action.payload;
-    },
-    setType: (state, action: PayloadAction<ArticleType>) => {
-      state.type = action.payload;
-    },
-    initState: (state) => {
-      const view = localStorage.getItem(ARTICLES_VIEW_LOCAL_STORAGE_KEY) as ArticleView;
-      state.view = view;
-      state.limit = view === ArticleView.LIST ? 4 : 9;
-      state._inited = true;
-    },
+    bookUpdated: booksAdapter.updateOne,
   },
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchArticles.pending, (state, action) => {
-        state.error = undefined;
-        state.isLoading = true;
-
-        if (action.meta.arg.replace) {
-          articlesAdapter.removeAll(state);
-        }
-      })
-      .addCase(fetchArticles.fulfilled, (state, action) => {
-        state.isLoading = false;
-        if (state.limit) {
-          state.hasMore = state.limit <= action.payload.length;
-        }
-
-        if (action.meta.arg.replace) {
-          articlesAdapter.setAll(state, action.payload);
-        } else {
-          articlesAdapter.addMany(state, action.payload);
-        }
-      })
-      .addCase(
-        fetchArticles.rejected,
-        (state, action: PayloadAction<string | undefined>) => {
-          state.isLoading = false;
-          state.error = action.payload;
-        },
-      );
-  },
-
 });
 
-export const { reducer: articlePageReducer } = articlePageSlice;
-export const { actions: articlePageActions } = articlePageSlice;
+const {
+  bookAdded,
+  booksLoading,
+  booksReceived,
+  bookUpdated,
+} = booksSlice.actions;
+
+const store = configureStore({
+  reducer: {
+    books: booksSlice.reducer,
+  },
+});
+
+type RootState = ReturnType<typeof store.getState>
+
+// books : EntityState<Book> & {loading: string}
 
 
- */
+// Check the initial state:
+console.log(store.getState().books);
+// {ids: [], entities: {}, loading: 'idle' }
+
+const booksSelectors = booksAdapter.getSelectors((state) => state.books);
+
+store.dispatch(bookAdded({id: 'a', title: 'First'}));
+console.log(store.getState().books);
+// {ids: ["a"], entities: {a: {id: "a", title: "First"}}, loading: 'idle' }
+
+store.dispatch(bookUpdated({id: 'a', changes: {title: 'First (altered)'}}));
+store.dispatch(booksLoading());
+console.log(store.getState().books);
+// {ids: ["a"], entities: {a: {id: "a", title: "First (altered)"}}, loading: 'pending' }
+
+store.dispatch(
+  booksReceived([
+    {id: 'b', title: 'Book 3'},
+    {id: 'c', title: 'Book 2'},
+  ])
+);
+
+console.log(booksSelectors.selectIds(store.getState()));
+// "a" was removed due to the `setAll()` call
+// Since they're sorted by title, "Book 2" comes before "Book 3"
+// ["c", "b"]
+
+console.log(booksSelectors.selectAll(store.getState()));
+// All book entries in sorted order
+// [{id: "c", title: "Book 2"}, {id: "b", title: "Book 3"}]

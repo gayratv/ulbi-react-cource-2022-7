@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b590130-5ca7-42a3-8a54-9b03b6a2b84e" name="Changes" comment="CRA createEntityAdapter 3">
+    <list default="true" id="0b590130-5ca7-42a3-8a54-9b03b6a2b84e" name="Changes" comment="CRA createEntityAdapter 4">
+      <change afterPath="$PROJECT_DIR$/my-app/src/Users/slices/userSlice.ts1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/Users/slices/userSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Users/slices/userSlice.ts" afterDir="false" />
     </list>
@@ -35,11 +36,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="createEntityAdapter" />
-                    <option name="lastUsedInstant" value="1670614138" />
+                    <option name="lastUsedInstant" value="1670623789" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="les_55" />
-                    <option name="lastUsedInstant" value="1670614046" />
+                    <option name="lastUsedInstant" value="1670623745" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="les_51" />
@@ -172,7 +173,8 @@
       <workItem from="1670571075621" duration="46000" />
       <workItem from="1670571132011" duration="41000" />
       <workItem from="1670571183019" duration="3718000" />
-      <workItem from="1670610064326" duration="4432000" />
+      <workItem from="1670610064326" duration="5468000" />
+      <workItem from="1670624185639" duration="812000" />
     </task>
     <task id="LOCAL-00001" summary="7 Статьи, комментарии. Нормализация данных. Блочная структура. Union типы. Skeleton. Protected Routes">
       <created>1670443412697</created>
@@ -244,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670614040048</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="CRA createEntityAdapter 4">
+      <created>1670623736647</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670623736647</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +283,8 @@
     <MESSAGE value="CRA createEntityAdapter first commit" />
     <MESSAGE value="CRA createEntityAdapter 2" />
     <MESSAGE value="CRA createEntityAdapter 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRA createEntityAdapter 3" />
+    <MESSAGE value="CRA createEntityAdapter 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRA createEntityAdapter 4" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
