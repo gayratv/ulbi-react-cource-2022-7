@@ -1,8 +1,8 @@
 import {
   createEntityAdapter,
   createSlice,
-  configureStore,
-  EntityState
+  configureStore
+  // ,EntityState
 } from '@reduxjs/toolkit';
 
 
@@ -25,7 +25,7 @@ const booksSlice = createSlice({
     // Can pass adapter functions directly as case reducers.  Because we're passing this
     // as a value, `createSlice` will auto-generate the `bookAdded` action type / creator
     bookAdded: booksAdapter.addOne,
-    booksLoading(state, action) {
+    booksLoading(state) {
       if (state.loading === 'idle') {
         state.loading = 'pending';
       }
@@ -55,7 +55,7 @@ const store = configureStore({
 });
 
 type RootState = ReturnType<typeof store.getState>;
-type BookSlice = ReturnType<typeof booksSlice.getInitialState>;
+// type BookSlice = ReturnType<typeof booksSlice.getInitialState>;
 
 // books : EntityState<Book> & {loading: string}
 
