@@ -1,0 +1,202 @@
+import {
+  configureStore,
+  createSelector,
+  createSlice,
+  createEntityAdapter,
+  createAsyncThunk
+} from '@reduxjs/toolkit';
+
+
+// https://github.com/harryheman/React-Total/blob/main/md/redux-toolkit.md
+
+/*
+  createAsyncThunk принимает три параметра:
+  1) Строку type значение действия:
+      Например, users/getUsers генерирует следующие типы действий:
+        pending: 'users/getUsers/pending'
+        fulfilled: 'users/getUsers/fulfilled'
+        rejected: 'users/getUsers/rejected'
+
+  2) Функцию payloadCreator (arg, thunkAPI)
+      Функция обратного вызова, которая должна возвращать promise,
+      содержащий результат некоторой асинхронной логики,
+      она может возвращать значение синхронно.
+      Если есть ошибка, она должна либо вернуть отклоненный promise, содержащий Error
+        или значение сообщение об ошибке.
+        либо в противном случае разрешенное обещание с RejectWithValue аргументом,
+        возвращенным из thunkAPI.rejectWithValue
+
+    arg - то что переданно в момент вызовы actionCreator:
+      dispatch(fetchUsers({status: 'active', sortBy: 'name'})).
+
+    thunkAPI:
+      - dispatch: метод Redux
+      - getState: метод Redux
+      - requestId: уникальное значение идентификатора строки, которое было автоматически
+        сгенерировано для идентификации этого запроса
+      - signal: AbortController.signal объект, который можно использовать, чтобы отменить запрос
+      - rejectWithValue: это служебная функция, с помощью которой можно возвращать отклоненный ответ
+        с определенной полезной нагрузкой. Он передаст любое значение, которое вы ему дадите,
+        и вернет его в полезной нагрузке отклоненного действия.
+
+  3) Объект options:
+      - condition: callback, который можно использовать для пропуска выполнения action
+         полезной нагрузки и всех action dispatches, если это необходимо.
+      - dispatchConditionRejection: если condition() возвращается false, поведение по умолчанию таково,
+        что никакие действия не отправляются вообще.
+      Если вы по-прежнему хотите, чтобы при отмене отправлялось «отклоненное» действие,
+      установите для этого флага значение true.
+
+  ! createAsyncThunk returns a standard Redux thunk action creator
+
+ createAsyncThunk генерирует, создает используя createAction: pending, fulfilled и rejected
+  Каждый объект action будет содержать значения
+    - requestId,
+    - args (переданные в Thunk аргументы)
+    - action.meta
+
+
+  Если вам нужно настроить содержимое rejected, должны сами отловить любые ошибки,
+  а затем вернуть новое значение с помощью thunkAPI.rejectWithValue.
+     rejectWithValue(errorPayload) и использовать это значение как action.payload
+*/
+
+export const getUsers = createAsyncThunk(
+  'users/getUsers',
+  async (arg, thunkAPI) => {
+    try {
+      console.log('thunkAPI', thunkAPI);
+      const response = await fetch(`https://randomuser.me/api/?results=10`);
+      // fetch(`https://randomuser.me/api/?results=10`)
+
+      if (!response.ok) {
+        throw new Error(`Could not fetch, received ${response.status}`);
+      }
+
+      const { results } = await response.json();
+
+      const users = results.map((user) => ({
+        id: user.login.uuid,
+        name: `${user.name.first} ${user.name.last}`,
+        image: user.picture.thumbnail
+      }));
+
+      return users;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data);
+    }
+  }
+);
+
+/*
+  createEntityAdapter принимает один параметр объекта options
+  с двумя необязательными полями внутри:
+    {
+      Entity экземпляр и возвращает значение любого поля уникального идентификатора внутри.
+      Если не указан, по умолчанию используется entity => entity.id
+
+      Предположим, что идентификаторы хранятся в поле, отличном от book.id.
+      selectId: (book) => book.bookId,
+
+      Функция обратного вызова, которая принимает два Entity экземпляра
+      и должна возвращать стандартный Array.sort() числовой результат (1, 0, -1),
+      чтобы указать их относительный порядок для сортировки.
+      sortComparer: (a, b) => a.title.localeCompare(b.title),
+    }
+*/
+
+// Инициализация Адаптера
+const usersAdapter = createEntityAdapter(); //  {} options
+
+/*
+  createEntityAdapter - возврашает GRUG методы:
+    - addOne: принимает один объект и добавляет его.
+    - addMany: принимает массив сущностей или объект и добавляет их.
+    - setAll: принимает массив сущностей или объект и заменяет существующее содержимое сущности значениями в массиве.
+    - removeOne: принимает одно значение идентификатора объекта и удаляет объект с этим идентификатором, если он существует.
+    - removeMany: принимает массив значений идентификаторов сущностей и удаляет каждую сущность с этими идентификаторами,
+        если они существуют.
+    - updateOne: принимает «объект обновления», содержащий идентификатор сущности, и объект,
+        содержащий одно или несколько новых значений поля для обновления внутри changes поля,
+        и выполняет поверхностное обновление соответствующей сущности.
+    - updateMany: принимает массив объектов обновления и выполняет неглубокие обновления для всех соответствующих сущностей.
+    - upsertOne: принимает одну сущность. Если сущность с таким идентификатором существует,
+        она выполнит неглубокое обновление, и указанные поля будут объединены в существующую сущность,
+        при этом любые совпадающие поля перезапишут существующие значения.
+        Если объект не существует, он будет добавлен.
+    - upsertMany: принимает массив сущностей или объект который будет неглубоко вставлен.
+
+  createEntityAdapter возврашет также функцию getInitialState
+    Возвращает новый объект состояния сущности, например {ids: [], entities: {}}
+    Еще принимает в качестве аргумента необязательный объект.
+    Поля в этом объекте будут объединены в возвращаемое значение начального состояния.
+*/
+
+const usersSlice = createSlice({
+  name: 'users',
+  // Возвращает набор функции
+  initialState: usersAdapter.getInitialState({
+    loading: false
+  }),
+  reducers: {
+    usersAddOne: usersAdapter.addOne,
+    usersAddMany: usersAdapter.addMany,
+    userUpdate: usersAdapter.updateOne,
+    userRemove: usersAdapter.removeOne
+  },
+  extraReducers: {
+    [getUsers.fulfilled]: (state, action) => {
+      state.loading = false;
+      usersAdapter.addMany(state, action.payload);
+    }
+  }
+});
+
+export const { actions } = usersSlice;
+
+/*
+  createEntityAdapter возврашет также функцию getSelectors,
+  она возвращает набор селекторов
+  которые знают, как читать содержимое объекта состояния сущности.
+
+  Каждая функция селектора будет создана с использованием createSelector (RESELECT)
+  функции повторного выбора, чтобы обеспечить запоминание результатов
+
+  - selectIds: возвращает state.ids массив.
+  - selectEntities: возвращает state.entities таблицу поиска. ОБЪЕКТ entities - который лежит в REDUX
+  - selectAll: отображает state.ids массив и возвращает массив объектов в том же порядке. МАССИВ entities
+  - selectTotal: возвращает общее количество сущностей, хранящихся в этом состоянии.
+  - selectById: учитывая состояние и идентификатор объекта,
+    возвращает объект с этим идентификатором или undefined
+*/
+
+// принимает все дерево состояний Redux и возвращает правильный объект состояния объекта
+export const globalizedSelectors = usersAdapter.getSelectors(
+  (state) => state.users
+);
+
+export const simpleSelectors = usersAdapter.getSelectors();
+
+// _________________________________
+const logger1 = createLogger({
+  duration: true,
+  collapsed: true,
+  diff: true,
+  colors: {
+    title: () => '#139BFE',
+    prevState: () => '#1C5FAF',
+    action: () => '#149945',
+    nextState: () => '#A47104',
+    error: () => '#ff0005'
+  }
+});
+
+export const store = configureStore({
+  reducer: {
+    users: usersSlice.reducer
+  }
+  // middleware: [logger1]
+  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger1)
+});
+
+// Check the initial state:

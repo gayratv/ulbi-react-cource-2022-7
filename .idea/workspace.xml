@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b590130-5ca7-42a3-8a54-9b03b6a2b84e" name="Changes" comment="8 Профили. Infinite scroll, intersection API. Отправка комментариев, профили пользователей&#10;&#10;55 Статьи. EntityAdapter, thunks, slices. View selector">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.ts" beforeDir="false" />
+    <list default="true" id="0b590130-5ca7-42a3-8a54-9b03b6a2b84e" name="Changes" comment="CRA createEntityAdapter first commit">
+      <change afterPath="$PROJECT_DIR$/my-app/src/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +89,7 @@
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "I:\\_prg\\1\\ulbi-react-cource-2022-7\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "I:\\_prg\\1\\ulbi-react-cource-2022-7\\my-app\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -169,7 +167,7 @@
       <workItem from="1670571011861" duration="54000" />
       <workItem from="1670571075621" duration="46000" />
       <workItem from="1670571132011" duration="41000" />
-      <workItem from="1670571183019" duration="3189000" />
+      <workItem from="1670571183019" duration="3718000" />
     </task>
     <task id="LOCAL-00001" summary="7 Статьи, комментарии. Нормализация данных. Блочная структура. Union типы. Skeleton. Protected Routes">
       <created>1670443412697</created>
@@ -220,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670571719693</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="CRA createEntityAdapter first commit">
+      <created>1670609684421</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1670609684422</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +252,8 @@
     <MESSAGE value="8 Профили. Infinite scroll, intersection API. Отправка комментариев, профили пользователей&#10;&#10;53 Апгрейд сайдбара. Селекторы" />
     <MESSAGE value="8 Профили. Infinite scroll, intersection API. Отправка комментариев, профили пользователей&#10;&#10;54 Список статей. useHover. Переключение вида" />
     <MESSAGE value="8 Профили. Infinite scroll, intersection API. Отправка комментариев, профили пользователей&#10;&#10;55 Статьи. EntityAdapter, thunks, slices. View selector" />
-    <option name="LAST_COMMIT_MESSAGE" value="8 Профили. Infinite scroll, intersection API. Отправка комментариев, профили пользователей&#10;&#10;55 Статьи. EntityAdapter, thunks, slices. View selector" />
+    <MESSAGE value="CRA createEntityAdapter first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRA createEntityAdapter first commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
