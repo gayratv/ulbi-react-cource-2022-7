@@ -6,10 +6,10 @@ import {
 } from '@reduxjs/toolkit';
 
 
-type Book = { bookId: string; title: string }
+type Book = { id: string; title: string }
 // Since we don't provide `selectId`, it defaults to assuming `entity.id` is the right field
 const booksAdapter = createEntityAdapter<Book>({
-  selectId: (book) => book.bookId,
+  selectId: (book) => book.id,
   // Keep the "all IDs" array sorted based on book titles
   sortComparer: (a, b) => a.title.localeCompare(b.title),
 
@@ -54,7 +54,8 @@ const store = configureStore({
   },
 });
 
-type RootState = ReturnType<typeof store.getState>
+type RootState = ReturnType<typeof store.getState>;
+type BookSlice = ReturnType<typeof booksSlice.getInitialState>;
 
 // books : EntityState<Book> & {loading: string}
 
@@ -63,7 +64,7 @@ type RootState = ReturnType<typeof store.getState>
 console.log(store.getState().books);
 // {ids: [], entities: {}, loading: 'idle' }
 
-const booksSelectors = booksAdapter.getSelectors((state) => state.books);
+const booksSelectors = booksAdapter.getSelectors<RootState>((state) => state.books);
 
 store.dispatch(bookAdded({id: 'a', title: 'First'}));
 console.log(store.getState().books);
