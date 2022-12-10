@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b590130-5ca7-42a3-8a54-9b03b6a2b84e" name="Changes" comment="CRA createEntityAdapter 7">
-      <change afterPath="$PROJECT_DIR$/my-app/.eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/.prettierrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/src/Users/services/reduxStore.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/src/Users/slices/usersSlice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/src/Users/slices/usersSliceTest.ts" afterDir="false" />
+    <list default="true" id="0b590130-5ca7-42a3-8a54-9b03b6a2b84e" name="Changes" comment="CRA createEntityAdapter &#10;users">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Users/services/fetchUsers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Users/services/fetchUsers.ts1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Users/slices/userSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Users/slices/bookSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/Users/slices/usersSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Users/slices/usersSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/Users/slices/usersSliceTest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Users/slices/usersSliceTest.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/Users/types/RandomUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Users/types/RandomUser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/store.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +185,7 @@
       <workItem from="1670571183019" duration="3718000" />
       <workItem from="1670610064326" duration="5468000" />
       <workItem from="1670624185639" duration="3903000" />
-      <workItem from="1670650801839" duration="5751000" />
+      <workItem from="1670650801839" duration="6446000" />
     </task>
     <task id="LOCAL-00001" summary="7 Статьи, комментарии. Нормализация данных. Блочная структура. Union типы. Skeleton. Protected Routes">
       <created>1670443412697</created>
@@ -292,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670626180321</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="CRA createEntityAdapter &#10;users">
+      <created>1670659209654</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1670659209654</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +326,8 @@
     <MESSAGE value="CRA createEntityAdapter 5" />
     <MESSAGE value="CRA createEntityAdapter 6" />
     <MESSAGE value="CRA createEntityAdapter 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRA createEntityAdapter 7" />
+    <MESSAGE value="CRA createEntityAdapter &#10;users" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRA createEntityAdapter &#10;users" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -6,9 +6,8 @@ import {
 
 import { User } from "../types/RandomUser";
 import { StoreState, store } from "../services/reduxStore";
-
 export const usersAdapter = createEntityAdapter<User>({
-  selectId: (user) => user.id.name + "->" + user.id.value,
+  selectId: (user) => user.login.uuid,
   // Keep the "all IDs" array sorted based on book titles
   sortComparer: (a, b) =>
     (a.name.first + a.name.last).localeCompare(a.name.first + a.name.last),

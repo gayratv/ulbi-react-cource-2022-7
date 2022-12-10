@@ -52,11 +52,13 @@ store.dispatch(
         "400b342945d8ff90d5fc797a04c0037d47f59252b1d8aa0da261d2c5b13ce079",
     },
     dob: {
-      date: new Date("1950-10-15T21:39:08.738Z"),
+      // date: new Date("1950-10-15T21:39:08.738Z"),
+      date: "1950-10-15T21:39:08.738Z",
       age: 72,
     },
     registered: {
-      date: new Date("2004-09-05T14:47:37.568Z"),
+      // date: new Date("2004-09-05T14:47:37.568Z"),
+      date: "2004-09-05T14:47:37.568Z",
       age: 18,
     },
     phone: "(901)-529-3327",
