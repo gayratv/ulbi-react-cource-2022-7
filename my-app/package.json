@@ -20,6 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "json:server": "node ./json-server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -44,6 +45,7 @@
   },
   "devDependencies": {
     "eslint-plugin-prettier": "^4.2.1",
+    "json-server": "^0.17.1",
     "prettier": "^2.8.1"
   }
 }

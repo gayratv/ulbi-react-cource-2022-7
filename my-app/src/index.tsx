@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { store } from "./Users/services/reduxStore";
-import "./Users/slices/usersSliceTest";
-import "./Users/slices/bookSliceTest";
+import { store } from "./Redux/services/reduxStore";
+import "./Redux/slices/usersSliceTest";
+import "./Redux/slices/bookSliceTest";
 
 console.log("START");
 console.log("store.getState() ", store.getState());
