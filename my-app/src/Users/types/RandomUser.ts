@@ -1,4 +1,5 @@
-export interface RootObject {
+// https://randomuser.me/api/?results=10
+export interface UsersFetchObject {
   results: User[];
   info: Info;
 }
@@ -17,7 +18,6 @@ export interface User {
   picture: Picture;
   nat: string; // Язык
 }
-
 
 export interface Name {
   title: string;
@@ -81,11 +81,9 @@ export interface Picture {
   thumbnail: string;
 }
 
-
 export interface Info {
   seed: string;
   results: number;
   page: number;
   version: string;
 }
-
