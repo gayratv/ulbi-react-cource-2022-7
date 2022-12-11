@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b590130-5ca7-42a3-8a54-9b03b6a2b84e" name="Changes" comment="CRA createEntityAdapter &#10;&#10;JSON server3">
+    <list default="true" id="0b590130-5ca7-42a3-8a54-9b03b6a2b84e" name="Changes" comment="CRA createEntityAdapter &#10;&#10;добавил middleware с доп аргументом">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Redux/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/services/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/Redux/services/fetchArticleById.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/services/fetchArticleById.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/Redux/services/reduxStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/services/reduxStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/Redux/slices/usersSliceTest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/slices/usersSliceTest.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +109,10 @@
       <recent name="I:\_prg\1\ulbi-react-cource-2022-7\my-app\src\Users\services" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.json:server">
+  <component name="RunManager" selected="JavaScript Debug.localhost:3000">
+    <configuration name="localhost:3000" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
     <configuration name="json:server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/my-app/package.json" />
       <command value="run" />
@@ -120,16 +125,6 @@
     </configuration>
     <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/my-app/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="start" />
@@ -160,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.localhost:3000" />
+        <item itemvalue="npm.start (1)" />
+        <item itemvalue="npm.json:server" />
         <item itemvalue="npm.start:dev:server" />
         <item itemvalue="npm.start:dev" />
-        <item itemvalue="npm.start (1)" />
-        <item itemvalue="npm.start" />
-        <item itemvalue="npm.json:server" />
       </list>
     </recent_temporary>
   </component>
@@ -353,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670752132689</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="CRA createEntityAdapter &#10;&#10;добавил middleware с доп аргументом">
+      <created>1670754351083</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1670754351083</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,7 +395,20 @@
     <MESSAGE value="CRA createEntityAdapter &#10;&#10;JSON server" />
     <MESSAGE value="CRA createEntityAdapter &#10;&#10;JSON server2" />
     <MESSAGE value="CRA createEntityAdapter &#10;&#10;JSON server3" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRA createEntityAdapter &#10;&#10;JSON server3" />
+    <MESSAGE value="CRA createEntityAdapter &#10;&#10;добавил middleware с доп аргументом" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRA createEntityAdapter &#10;&#10;добавил middleware с доп аргументом" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/my-app/src/Redux/slices/usersSliceTest.ts</url>
+          <line>5</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

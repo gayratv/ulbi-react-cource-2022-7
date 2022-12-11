@@ -4,24 +4,6 @@ import { Dispatch } from "redux";
 import { ThunkConfig } from "./Thunk";
 
 /*
-типы для
- createAsyncThunk:
-
-  typePrefix: string,
-  payloadCreator: AsyncThunkPayloadCreator<
-      Returned,
-      ThunkArg,
-      ThunkApiConfig
-    >,
-
-    options?: AsyncThunkOptions<ThunkArg, ThunkApiConfig>
-
-
-Типы - аргументы
-    Returned,
-    ThunkArg,
-    ThunkApiConfig extends AsyncThunkConfig
-
 
 
 type AsyncThunkConfig = {
@@ -34,6 +16,26 @@ type AsyncThunkConfig = {
   fulfilledMeta?: unknown
   rejectedMeta?: unknown
 }
+
+function createAsyncThunk<
+    Returned,
+    ThunkArg,
+    ThunkApiConfig extends AsyncThunkConfig
+  >(
+    typePrefix: string,
+    payloadCreator: AsyncThunkPayloadCreator<
+      Returned,
+      ThunkArg,
+      ThunkApiConfig
+    >,
+    options?: AsyncThunkOptions<ThunkArg, ThunkApiConfig>
+  )
+
+  AsyncThunkPayloadCreator<  Returned,  ThunkArg = void,  ThunkApiConfig extends AsyncThunkConfig = {}>
+  (
+    arg: ThunkArg,
+    thunkAPI: GetThunkAPI<ThunkApiConfig>
+  )
 */
 
 export const fetchArticleById = createAsyncThunk<

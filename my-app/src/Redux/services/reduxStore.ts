@@ -4,7 +4,7 @@ import { booksReducer, booksSelectors } from "../slices/bookSlice";
 import { Dictionary, EntityId } from "@reduxjs/toolkit/src/entities/models";
 import { articlesReducer, articlesSelectors } from "../slices/articlesSlice";
 import { ThunkExtraArg } from "./Thunk";
-import axios from "axios/index";
+import axios from "axios";
 
 export const $api = axios.create({
   baseURL: "http://localhost:8000",
