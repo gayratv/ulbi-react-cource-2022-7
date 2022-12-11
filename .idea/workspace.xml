@@ -4,24 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b590130-5ca7-42a3-8a54-9b03b6a2b84e" name="Changes" comment="CRA createEntityAdapter &#10;&#10;JSON server">
-      <change afterPath="$PROJECT_DIR$/my-app/json-server/users.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/src/Redux/types/Articles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/json-server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/json-server/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/json-server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/json-server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Users/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Users/services/fetchUsers.ts1" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/services/fetchUsers.ts1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Users/services/reduxStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/services/reduxStore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Users/slices/bookSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/slices/bookSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Users/slices/bookSliceTest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/slices/bookSliceTest.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Users/slices/usersSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/slices/usersSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Users/slices/usersSliceTest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/slices/usersSliceTest.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Users/types/RandomUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/types/RandomUser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Users/types/UserSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/types/UserSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/index.tsx" afterDir="false" />
+    <list default="true" id="0b590130-5ca7-42a3-8a54-9b03b6a2b84e" name="Changes" comment="CRA createEntityAdapter &#10;&#10;JSON server3">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,11 +34,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="createEntityAdapter" />
-                    <option name="lastUsedInstant" value="1670684439" />
+                    <option name="lastUsedInstant" value="1670695036" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="les_55" />
-                    <option name="lastUsedInstant" value="1670684393" />
+                    <option name="lastUsedInstant" value="1670694823" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="les_51" />
@@ -93,7 +77,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;TF_FMT&quot;: &quot;false&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;I:/_prg/1/ulbi-react-cource-2022-7/my-app/src/Users/services&quot;,
+    &quot;last_opened_file_path&quot;: &quot;I:/_prg/1/ulbi-react-cource-2022-7/my-app/src/Redux/slices&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
@@ -111,6 +95,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\_prg\1\ulbi-react-cource-2022-7\my-app\src\Redux\slices" />
       <recent name="I:\_prg\1\ulbi-react-cource-2022-7\my-app\src\Users\services" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -208,7 +193,8 @@
       <workItem from="1670624185639" duration="3903000" />
       <workItem from="1670650801839" duration="10529000" />
       <workItem from="1670684350476" duration="1367000" />
-      <workItem from="1670690269252" duration="2286000" />
+      <workItem from="1670690269252" duration="7573000" />
+      <workItem from="1670752037016" duration="84000" />
     </task>
     <task id="LOCAL-00001" summary="7 Статьи, комментарии. Нормализация данных. Блочная структура. Union типы. Skeleton. Protected Routes">
       <created>1670443412697</created>
@@ -336,7 +322,28 @@
       <option name="project" value="LOCAL" />
       <updated>1670684510355</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="CRA createEntityAdapter &#10;&#10;JSON server2">
+      <created>1670694813174</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1670694813174</updated>
+    </task>
+    <task id="LOCAL-00020" summary="CRA createEntityAdapter &#10;&#10;JSON server3">
+      <created>1670752087332</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1670752087332</updated>
+    </task>
+    <task id="LOCAL-00021" summary="CRA createEntityAdapter &#10;&#10;JSON server3">
+      <created>1670752102922</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1670752102922</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +381,9 @@
     <MESSAGE value="CRA createEntityAdapter &#10;&#10;users прошли тесты" />
     <MESSAGE value="CRA createEntityAdapter &#10;&#10;users прошли тесты 2" />
     <MESSAGE value="CRA createEntityAdapter &#10;&#10;JSON server" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRA createEntityAdapter &#10;&#10;JSON server" />
+    <MESSAGE value="CRA createEntityAdapter &#10;&#10;JSON server2" />
+    <MESSAGE value="CRA createEntityAdapter &#10;&#10;JSON server3" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRA createEntityAdapter &#10;&#10;JSON server3" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

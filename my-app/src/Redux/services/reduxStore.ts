@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import { usersReducer, usersSelectors } from "../slices/usersSlice";
 import { booksReducer, booksSelectors } from "../slices/bookSlice";
 import { Dictionary, EntityId } from "@reduxjs/toolkit/src/entities/models";
+import { articlesReducer, articlesSelectors } from "../slices/articlesSlice";
 
 export const store = configureStore({
   reducer: {
     users: usersReducer,
     books: booksReducer,
+    articles: articlesReducer,
   },
 });
 
@@ -24,7 +26,11 @@ declare module "@reduxjs/toolkit" {
   }
 }
 
-const adapterSelectorsList = [usersSelectors, booksSelectors];
+const adapterSelectorsList = [
+  usersSelectors,
+  booksSelectors,
+  articlesSelectors,
+];
 console.log("adapterSelectorsList.forEach");
 adapterSelectorsList.forEach((selector) => {
   selector.selectTotal2 = () => selector.selectTotal(store.getState());
@@ -33,12 +39,4 @@ adapterSelectorsList.forEach((selector) => {
   // @ts-ignore
   selector.selectById2 = (id: EntityId) =>
     selector.selectById(store.getState(), id);
-  // console.log(selector);
 });
-/*
-export interface EntitySelectors<T, V> {
-  selectIds: (state: V) => EntityId[]
-  selectEntities: (state: V) => Dictionary<T>
-  selectAll: (state: V) => T[]
-  selectById: (state: V, id: EntityId) => T | undefined
-}*/

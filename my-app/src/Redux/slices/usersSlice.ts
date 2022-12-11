@@ -41,13 +41,3 @@ export const { actions: usersActions, reducer: usersReducer } = usersSlice;
 export const usersSelectors = usersAdapter.getSelectors<StoreState>(
   (state) => state.users
 );
-/*
-declare module "@reduxjs/toolkit" {
-  export interface EntitySelectors<T, V> {
-    selectTotal2: () => number;
-    // selectTotal: (state: V) => number
-  }
-}*/
-
-// usersSelectors.selectTotal2 = () =>
-//   usersSelectors.selectTotal(store.getState());
