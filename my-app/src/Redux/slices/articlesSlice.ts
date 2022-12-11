@@ -1,11 +1,7 @@
-import {
-  createEntityAdapter,
-  createSlice,
-  EntitySelectors,
-} from "@reduxjs/toolkit";
+import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 
 import { Article } from "../types/Articles";
-import { StoreState, store } from "../services/reduxStore";
+import { StoreState } from "../services/reduxStore";
 export const articlesAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id,
 });

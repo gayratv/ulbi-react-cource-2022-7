@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b590130-5ca7-42a3-8a54-9b03b6a2b84e" name="Changes" comment="CRA createEntityAdapter &#10;&#10;добавил middleware с доп аргументом">
+    <list default="true" id="0b590130-5ca7-42a3-8a54-9b03b6a2b84e" name="Changes" comment="CRA createEntityAdapter &#10;&#10;fetchArticleById.ts">
+      <change afterPath="$PROJECT_DIR$/my-app/src/Redux/services/fetchArticleByIdTest.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Redux/services/fetchArticleById.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/services/fetchArticleById.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/Redux/services/reduxStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/services/reduxStore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Redux/slices/usersSliceTest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/slices/usersSliceTest.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/Redux/slices/articlesSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/slices/articlesSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/Redux/slices/bookSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/slices/bookSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/Redux/slices/usersSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Redux/slices/usersSlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +40,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="createEntityAdapter" />
-                    <option name="lastUsedInstant" value="1670752522" />
+                    <option name="lastUsedInstant" value="1670757718" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="les_55" />
-                    <option name="lastUsedInstant" value="1670752140" />
+                    <option name="lastUsedInstant" value="1670757536" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="les_51" />
@@ -156,10 +158,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.localhost:3000" />
-        <item itemvalue="npm.start (1)" />
-        <item itemvalue="npm.json:server" />
         <item itemvalue="npm.start:dev:server" />
         <item itemvalue="npm.start:dev" />
+        <item itemvalue="npm.start (1)" />
+        <item itemvalue="npm.json:server" />
       </list>
     </recent_temporary>
   </component>
@@ -355,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670754351083</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="CRA createEntityAdapter &#10;&#10;fetchArticleById.ts">
+      <created>1670757525574</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1670757525574</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,7 +405,8 @@
     <MESSAGE value="CRA createEntityAdapter &#10;&#10;JSON server2" />
     <MESSAGE value="CRA createEntityAdapter &#10;&#10;JSON server3" />
     <MESSAGE value="CRA createEntityAdapter &#10;&#10;добавил middleware с доп аргументом" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRA createEntityAdapter &#10;&#10;добавил middleware с доп аргументом" />
+    <MESSAGE value="CRA createEntityAdapter &#10;&#10;fetchArticleById.ts" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRA createEntityAdapter &#10;&#10;fetchArticleById.ts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -404,8 +414,24 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/my-app/src/Redux/slices/usersSliceTest.ts</url>
           <line>5</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/my-app/src/Redux/services/fetchArticleById.ts</url>
+          <line>45</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/my-app/src/Redux/services/fetchArticleByIdTest.ts</url>
+          <line>4</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/my-app/src/Redux/services/fetchArticleById.ts</url>
+          <line>50</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -3,9 +3,7 @@ import {
   createSlice,
   PayloadAction,
 } from "@reduxjs/toolkit";
-import { store, StoreState } from "../services/reduxStore";
-import { Dictionary, EntityId } from "@reduxjs/toolkit/src/entities/models";
-
+import { StoreState } from "../services/reduxStore";
 type Book = { id: string; title: string; descr?: string };
 // Since we don't provide `selectId`, it defaults to assuming `entity.id` is the right field
 const booksAdapter = createEntityAdapter<Book>({

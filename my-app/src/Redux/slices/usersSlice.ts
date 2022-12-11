@@ -1,11 +1,7 @@
-import {
-  createEntityAdapter,
-  createSlice,
-  EntitySelectors,
-} from "@reduxjs/toolkit";
+import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 
 import { User } from "../types/RandomUser";
-import { StoreState, store } from "../services/reduxStore";
+import { StoreState } from "../services/reduxStore";
 export const usersAdapter = createEntityAdapter<User>({
   selectId: (user) => user.login.uuid,
   // Keep the "all IDs" array sorted based on book titles
