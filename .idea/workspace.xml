@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b590130-5ca7-42a3-8a54-9b03b6a2b84e" name="Changes" comment="CRA createEntityAdapter &#10;&#10;JSON server3">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-app/src/Redux/services/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,11 +35,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="createEntityAdapter" />
-                    <option name="lastUsedInstant" value="1670695036" />
+                    <option name="lastUsedInstant" value="1670752522" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="les_55" />
-                    <option name="lastUsedInstant" value="1670694823" />
+                    <option name="lastUsedInstant" value="1670752140" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="les_51" />
@@ -71,30 +72,31 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;TF_FMT&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;I:/_prg/1/ulbi-react-cource-2022-7/my-app/src/Redux/slices&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;I:\\_prg\\1\\ulbi-react-cource-2022-7\\node_modules\\stylelint&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;I:\\_prg\\1\\ulbi-react-cource-2022-7\\my-app\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TF_FMT": "false",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "I:/_prg/1/ulbi-react-cource-2022-7/my-app/src/Redux/services",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.stylelint": "I:\\_prg\\1\\ulbi-react-cource-2022-7\\node_modules\\stylelint",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "I:\\_prg\\1\\ulbi-react-cource-2022-7\\my-app\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\_prg\1\ulbi-react-cource-2022-7\my-app\src\Redux\services" />
       <recent name="I:\_prg\1\ulbi-react-cource-2022-7\my-app\src\Redux\slices" />
       <recent name="I:\_prg\1\ulbi-react-cource-2022-7\my-app\src\Users\services" />
     </key>
@@ -157,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.json:server" />
-        <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.start:dev:server" />
         <item itemvalue="npm.start:dev" />
+        <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.json:server" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +196,7 @@
       <workItem from="1670650801839" duration="10529000" />
       <workItem from="1670684350476" duration="1367000" />
       <workItem from="1670690269252" duration="7573000" />
-      <workItem from="1670752037016" duration="84000" />
+      <workItem from="1670752037016" duration="553000" />
     </task>
     <task id="LOCAL-00001" summary="7 Статьи, комментарии. Нормализация данных. Блочная структура. Union типы. Skeleton. Protected Routes">
       <created>1670443412697</created>
@@ -343,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670752102922</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="CRA createEntityAdapter &#10;&#10;JSON server3">
+      <created>1670752132689</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1670752132689</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
