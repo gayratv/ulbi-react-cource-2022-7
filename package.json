@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-ulbi-tv-plugin",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "plugin for production project",
   "keywords": [
     "eslint",
@@ -14,6 +14,7 @@
     "test": "mocha tests --recursive"
   },
   "dependencies": {
+    "micromatch": "^4.0.5",
     "requireindex": "^1.2.0"
   },
   "devDependencies": {
