@@ -11,7 +11,8 @@ https://ulbitv.ru/pl/teach/control/lesson/view?id=261589536
 
 import path from 'path';
 import { Project } from 'ts-morph';
-import { PROJECT_LAYERS } from './consts';
+// import { PROJECT_LAYERS } from './consts';
+const PROJECT_LAYERS = ['app', 'entities', 'features', 'shared', 'pages', 'widgets'];
 
 const project = new Project({});
 project.addSourceFilesAtPaths('src/**/*.ts');
