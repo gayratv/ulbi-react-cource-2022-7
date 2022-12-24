@@ -1,27 +1,13 @@
-// eslint-disable-next-line ulbi-tv-plugin/path-checker
-import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
+import * as commonCommands from './commands/common';
+import * as profileCommands from './commands/profile';
+import * as articleCommands from './commands/article';
+import * as commentsCommands from './commands/comments';
+import * as ratingCommands from './commands/rating';
 
-function login(username: string = 'testuser', password: string = '123') {
-    cy.request({
-        method: 'POST',
-        url: 'http://localhost:8000/login',
-        body: {
-            username,
-            password,
-        },
-    })
-        .then(({ body }) => {
-            window.localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(body));
-        });
-};
-Cypress.Commands.add('login', login);
-
-declare global {
-    namespace Cypress {
-        interface Chainable {
-            login(email?: string, password?: string): Chainable<void>;
-        }
-    }
-}
+Cypress.Commands.addAll(commonCommands);
+Cypress.Commands.addAll(profileCommands);
+Cypress.Commands.addAll(articleCommands);
+Cypress.Commands.addAll(commentsCommands);
+Cypress.Commands.addAll(ratingCommands);
 
 export {};

@@ -4,7 +4,6 @@ describe('Роутинг', () => {
     describe('Пользователь НЕ авторизован', () => {
         it('Переход на главную страницу', () => {
             cy.visit('/');
-            cy.get('[data-testid=MainPage]').should('exist');
             cy.get(selectByTestId('MainPage')).should('exist');
         });
         it('Переход открывает страницу профиля', () => {
