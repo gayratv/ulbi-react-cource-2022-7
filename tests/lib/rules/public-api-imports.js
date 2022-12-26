@@ -1,32 +1,31 @@
 /**
- * @fileoverview descr
- * @author timur
+ * @fileoverview Deny non public api imports
+ * @author Nikolai Zein
  */
-"use strict";
+'use strict'
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/public-api-imports"),
-  RuleTester = require("eslint").RuleTester;
-
+const rule = require('../../../lib/rules/public-api-imports'),
+  RuleTester = require('eslint').RuleTester
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester({
-  parserOptions: {ecmaVersion: 6, sourceType: 'module'}
-});
+  parserOptions: { ecmaVersion: 6, sourceType: 'module' },
+})
 
 const aliasOptions = [
   {
-    alias: '@'
-  }
+    alias: '@',
+  },
 ]
 
-ruleTester.run("public-api-imports", rule, {
+ruleTester.run('public-api-imports', rule, {
   valid: [
     {
       code: "import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice'",
@@ -38,48 +37,94 @@ ruleTester.run("public-api-imports", rule, {
       options: aliasOptions,
     },
     {
-      filename: 'C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\file.test.ts',
+      filename:
+        'C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\file.test.ts',
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/testing'",
       errors: [],
-      options: [{
-        alias: '@',
-        testFilesPatterns: ['**/*.test.ts', '**/*.test.ts', '**/StoreDecorator.tsx']
-      }],
+      options: [
+        {
+          alias: '@',
+          testFilesPatterns: [
+            '**/*.test.ts',
+            '**/*.test.ts',
+            '**/StoreDecorator.tsx',
+          ],
+        },
+      ],
     },
     {
-      filename: 'C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\StoreDecorator.tsx',
+      filename:
+        'C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\StoreDecorator.tsx',
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/testing'",
       errors: [],
-      options: [{
-        alias: '@',
-        testFilesPatterns: ['**/*.test.ts', '**/*.test.ts', '**/StoreDecorator.tsx']
-      }],
-    }
+      options: [
+        {
+          alias: '@',
+          testFilesPatterns: [
+            '**/*.test.ts',
+            '**/*.test.ts',
+            '**/StoreDecorator.tsx',
+          ],
+        },
+      ],
+    },
   ],
 
   invalid: [
     {
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/model/file.ts'",
-      errors: [{ message: "Абсолютный импорт разрешен только из Public API (index.ts)"}],
+      errors: [
+        {
+          message: 'Absolute import is allowed from public api only',
+        },
+      ],
       options: aliasOptions,
+      output:
+        "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article'",
     },
     {
-      filename: 'C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\StoreDecorator.tsx',
-      code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/testing/file.tsx'",
-      errors: [{message: 'Абсолютный импорт разрешен только из Public API (index.ts)'}],
-      options: [{
-        alias: '@',
-        testFilesPatterns: ['**/*.test.ts', '**/*.test.ts', '**/StoreDecorator.tsx']
-      }],
+      filename:
+        'C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\StoreDecorator.tsx',
+      code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/something/file.tsx'",
+      errors: [
+        {
+          message: 'Absolute import is allowed from public api only',
+        },
+      ],
+      options: [
+        {
+          alias: '@',
+          testFilesPatterns: [
+            '**/*.test.ts',
+            '**/*.test.ts',
+            '**/StoreDecorator.tsx',
+          ],
+        },
+      ],
+      output:
+        "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article'",
     },
     {
-      filename: 'C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\forbidden.ts',
+      filename:
+        'C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\forbidden.ts',
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/testing'",
-      errors: [{message: 'Тестовые данные необходимо импортировать из publicApi/testing.ts'}],
-      options: [{
-        alias: '@',
-        testFilesPatterns: ['**/*.test.ts', '**/*.test.ts', '**/StoreDecorator.tsx']
-      }],
-    }
+      errors: [
+        {
+          message:
+            'Testing data has to be imported from testing public api file: testing.ts',
+        },
+      ],
+      options: [
+        {
+          alias: '@',
+          testFilesPatterns: [
+            '**/*.test.ts',
+            '**/*.test.ts',
+            '**/StoreDecorator.tsx',
+          ],
+        },
+      ],
+      output: null,
+    },
   ],
-});
+})

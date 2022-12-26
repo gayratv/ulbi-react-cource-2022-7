@@ -1,33 +1,38 @@
 {
-  "name": "eslint-plugin-ulbi-tv-plugin",
-  "version": "0.0.7",
-  "description": "plugin for production project",
+  "name": "eslint-plugin-test-fsd",
+  "version": "0.0.11",
+  "description": "FSD rules checker",
   "keywords": [
     "eslint",
     "eslintplugin",
     "eslint-plugin"
   ],
-  "author": "timur",
-  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frenzymind/test-fsd"
+  },
+  "author": "Nikolai Zein",
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
   "scripts": {
     "lint": "eslint .",
     "test": "mocha tests --recursive"
   },
   "dependencies": {
-    "micromatch": "^4.0.5",
+    "micromatch": "4.0.5",
     "requireindex": "^1.2.0"
   },
   "devDependencies": {
-    "eslint": "^8.0.1",
-    "eslint-plugin-eslint-plugin": "^4.0.1",
+    "eslint": "^8.19.0",
+    "eslint-plugin-eslint-plugin": "^5.0.0",
     "eslint-plugin-node": "^11.1.0",
-    "mocha": "^9.1.3"
+    "mocha": "^10.0.0"
   },
   "engines": {
-    "node": "12.x || 14.x || >= 16"
+    "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"
   },
   "peerDependencies": {
-    "eslint": ">=6"
+    "eslint": ">=7"
   },
   "license": "ISC"
 }

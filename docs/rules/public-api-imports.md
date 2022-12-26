@@ -1,4 +1,4 @@
-# descr (public-api-imports)
+# Deny non public api imports (public-api-imports)
 
 Please describe the origin of the rule here.
 

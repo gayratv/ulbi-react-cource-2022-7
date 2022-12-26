@@ -1,6 +1,13 @@
-# eslint-plugin-ulbi-tv-plugin
+Nikolay
+https://t.me/morphoratorus
+Закрытый чат (обсуждение)
+потратил почти 3 часа на доработку плагина 😣 но всё работает вроде бы зато )
 
-plugin for production project
+https://www.npmjs.com/package/eslint-plugin-test-fsd
+
+# eslint-plugin-test-fsd
+
+trany
 
 ## Installation
 
@@ -10,20 +17,20 @@ You'll first need to install [ESLint](https://eslint.org/):
 npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-ulbi-tv-plugin`:
+Next, install `eslint-plugin-test-fsd`:
 
 ```sh
-npm install eslint-plugin-ulbi-tv-plugin --save-dev
+npm install eslint-plugin-test-fsd --save-dev
 ```
 
 ## Usage
 
-Add `ulbi-tv-plugin` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `test-fsd` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
     "plugins": [
-        "ulbi-tv-plugin"
+        "test-fsd"
     ]
 }
 ```
@@ -34,7 +41,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "ulbi-tv-plugin/rule-name": 2
+        "test-fsd/rule-name": 2
     }
 }
 ```

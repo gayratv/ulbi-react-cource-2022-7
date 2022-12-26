@@ -1,28 +1,30 @@
 /**
- * @fileoverview feature sliced relative path checker
- * @author timur
+ * @fileoverview fsd relative path checker
+ * @author Nikolai Zein
  */
-"use strict";
+'use strict'
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/path-checker"),
-  RuleTester = require("eslint").RuleTester;
-
+const rule = require('../../../lib/rules/path-checker'),
+  RuleTester = require('eslint').RuleTester
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester({
-  parserOptions: {ecmaVersion: 6, sourceType: 'module'}
-});
-ruleTester.run("path-checker", rule, {
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: 'module',
+  },
+})
+ruleTester.run('path-checker', rule, {
   valid: [
     {
-      filename: 'C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\Article',
+      filename: '/home/study/ulbi/expert_react/src/entities/Article',
       code: "import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice'",
       errors: [],
     },
@@ -30,19 +32,25 @@ ruleTester.run("path-checker", rule, {
 
   invalid: [
     {
-      filename: 'C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\Article',
+      filename:
+        '/home/study/ulbi/expert_react/src/entities/Article/folder/file.tsx',
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/model/slices/addCommentFormSlice'",
-      errors: [{ message: "В рамках одного слайса все пути должны быть относительными"}],
+      errors: [{ message: 'Import has to be relative within a slice' }],
       options: [
         {
-          alias: '@'
-        }
-      ]
+          alias: '@',
+        },
+      ],
+      output:
+        "import { addCommentFormActions, addCommentFormReducer } from '../model/slices/addCommentFormSlice'",
     },
     {
-      filename: 'C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\Article',
+      filename:
+        '/home/study/ulbi/expert_react/src/entities/Article/folder/file.tsx',
       code: "import { addCommentFormActions, addCommentFormReducer } from 'entities/Article/model/slices/addCommentFormSlice'",
-      errors: [{ message: "В рамках одного слайса все пути должны быть относительными"}],
+      errors: [{ message: 'Import has to be relative within a slice' }],
+      output:
+        "import { addCommentFormActions, addCommentFormReducer } from '../model/slices/addCommentFormSlice'",
     },
   ],
-});
+})

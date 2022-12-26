@@ -1,4 +1,4 @@
-# safasf (layer-imports)
+# Deny import from upper layers (layer-imports)
 
 Please describe the origin of the rule here.
 
