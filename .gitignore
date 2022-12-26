@@ -4,4 +4,4 @@ node_modules
 /storybook-static
 .loki/report.html
 .loki/report.json
-/my-app
+/reports/unit
